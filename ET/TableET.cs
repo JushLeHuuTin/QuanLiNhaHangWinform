@@ -9,29 +9,29 @@ namespace ET
 {
     public class TableET
     {
-        private string maBan;
+        private int maBan;
         private string tenBan;
         private string trangThai;
-        private string tang;
+        private string viTri;
 
         public TableET() { }
-        public TableET(string maBan, string tenBan, string tang, string trangThai)
+        public TableET(int maBan, string tenBan, string viTri, string trangThai)
         {
             this.maBan = maBan;
             this.tenBan = tenBan;
             this.trangThai = trangThai;
-            this.tang = tang;
+            this.viTri = viTri;
         }
         public TableET(DataRow item)
         {
-            this.maBan = (string)item["ID_BAN"].ToString();
+            this.maBan = (int)item["ID_Ban"];
             this.tenBan = (string)item["tenBan"];
             this.trangThai = (string)item["trangThai"];
-            this.tang = (string)item["ViTri"];
+            this.viTri = (string)item["ViTri"];
         }
-        public string MaBan { get => maBan; set => maBan = value; }
+        public int MaBan { get => maBan; set => maBan = value; }
         public string TenBan { get => tenBan; set => tenBan = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
-        public string Tang { get => tang; set => tang = value; }
+        public string ViTri { get => viTri; set => viTri = value; }
     }
 }

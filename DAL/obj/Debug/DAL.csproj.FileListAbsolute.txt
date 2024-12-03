@@ -7,3 +7,12 @@ D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DAL\obj\Debug\DAL.csproj.CoreCompil
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DAL\obj\Debug\DAL.dll
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DAL\obj\Debug\DAL.pdb
+D:\DoAnQLNhaHang\DAL\bin\Debug\DAL.dll
+D:\DoAnQLNhaHang\DAL\bin\Debug\DAL.pdb
+D:\DoAnQLNhaHang\DAL\bin\Debug\ET.dll
+D:\DoAnQLNhaHang\DAL\bin\Debug\ET.pdb
+D:\DoAnQLNhaHang\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\DoAnQLNhaHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\DoAnQLNhaHang\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\DoAnQLNhaHang\DAL\obj\Debug\DAL.dll
+D:\DoAnQLNhaHang\DAL\obj\Debug\DAL.pdb

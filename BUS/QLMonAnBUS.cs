@@ -12,6 +12,11 @@ namespace BUS
     public class QLMonAnBUS
     {
         MonAnDAL MonAnDAL = new MonAnDAL();
+
+        public List<MonAnET> GetListMonAn()
+        {
+            return MonAnDAL.GetListMonAn();
+        }
         //Hien danh sach mon an
         public DataTable DanhSachMonAn()
         {

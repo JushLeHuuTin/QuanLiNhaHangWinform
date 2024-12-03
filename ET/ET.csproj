@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTHoaDonET.cs" />
+    <Compile Include="MenuET.cs" />
+    <Compile Include="HoaDonET.cs" />
     <Compile Include="MonAnET.cs" />
     <Compile Include="TableET.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Voucher.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

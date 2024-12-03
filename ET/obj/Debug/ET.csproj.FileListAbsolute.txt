@@ -4,3 +4,9 @@ D:\1_Lập trình ứng dụng\DoAnQLNhaHang\ET\obj\Debug\ET.csproj.AssemblyRefe
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\ET\obj\Debug\ET.csproj.CoreCompileInputs.cache
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\ET\obj\Debug\ET.dll
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\ET\obj\Debug\ET.pdb
+D:\DoAnQLNhaHang\ET\bin\Debug\ET.dll
+D:\DoAnQLNhaHang\ET\bin\Debug\ET.pdb
+D:\DoAnQLNhaHang\ET\obj\Debug\ET.csproj.AssemblyReference.cache
+D:\DoAnQLNhaHang\ET\obj\Debug\ET.csproj.CoreCompileInputs.cache
+D:\DoAnQLNhaHang\ET\obj\Debug\ET.dll
+D:\DoAnQLNhaHang\ET\obj\Debug\ET.pdb

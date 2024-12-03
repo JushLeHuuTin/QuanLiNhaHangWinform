@@ -6,6 +6,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAL;
 using ET;
 
@@ -52,9 +53,6 @@ namespace BUS
             return BanDAL.XoaBan(tableET);
         }
         //Tong so ban
-        public object TongSoBan()
-        {
-            return BanDAL.TongSoBan();
-        }
+       
     }
 }

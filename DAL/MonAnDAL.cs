@@ -16,95 +16,55 @@ namespace DAL
         
         public MonAnDAL()
         {
-            conn = new SqlConnection("Data Source=LAPTOP-ASUSTUFF\\SQLEXPRESS;Initial Catalog=QLNhaHang;Integrated Security=True");
+        }
+
+        public List<MonAnET> GetListMonAn()
+        {
+            List<MonAnET> monAnETs = new List<MonAnET>();
+            DataTable dt = DataProvider.Instance.ExecuteQuery("sp_DSMonAn");
+            foreach (DataRow item in dt.Rows)
+            {
+                monAnETs.Add(new MonAnET(item));
+            }
+            return monAnETs;
         }
         //Hien thi mon an
         public DataTable DSMonAn()
         {
-            conn.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand("sp_DSMonAn", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sqlDataAdapter.Fill(dt);
-                return dt;
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }finally { conn.Close(); }
-            return null;
+            return DataProvider.Instance.ExecuteQuery("sp_DSMonAn");
+            
         }
         //Them mon an
         public int ThemMon(MonAnET monAn)
         {
-            conn.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand("sp_ThemMonAn", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter paMaMon = new SqlParameter("@MaMon", monAn.MaMonAn);
-                SqlParameter paTenMon = new SqlParameter("@TenMon", monAn.TenMonAn);
-                SqlParameter paDonGia = new SqlParameter("@DonGia", monAn.DonGia);
-                SqlParameter paTrangThai = new SqlParameter("@TrangThai", monAn.TrangThai);
-                cmd.Parameters.Add(paMaMon);
-                cmd.Parameters.Add(paTenMon);
-                cmd.Parameters.Add(paDonGia);
-                cmd.Parameters.Add(paTrangThai);
-                int row = cmd.ExecuteNonQuery();
-                return row;
-            }catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally { conn.Close(); }
-            return 0;
+            SqlParameter[] sqlParameters = new SqlParameter[] { 
+                new SqlParameter("@TenMon", monAn.TenMonAn),
+                new SqlParameter("@DonGia", monAn.DonGia),
+                new SqlParameter("@TrangThai", monAn.TrangThai)
+                
+            };
+            return DataProvider.Instance.ExecuteNonQuery("sp_ThemMonAn",sqlParameters);
         }
         //Xoa mon
         public int XoaMon(MonAnET monAn)
         {
-            conn.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand("sp_XoaMon", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter paMaMon = new SqlParameter("@MaMon", monAn.MaMonAn);
-                cmd.Parameters.Add(paMaMon);
-                int row = cmd.ExecuteNonQuery();
-                return row;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }finally { conn.Close(); }
-            return 0;
+            SqlParameter[] sqlParameters = new SqlParameter[] {
+                new SqlParameter("@MaMon", monAn.MaMonAn)
+
+            };
+            return DataProvider.Instance.ExecuteNonQuery("sp_XoaMon", sqlParameters); ;
         }
         //Sua mon
         public int SuaMon(MonAnET monAn)
         {
-            conn.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand("sp_SuaMon", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter paMaMon = new SqlParameter("@MaMon", monAn.MaMonAn);
-                SqlParameter paTenMon = new SqlParameter("@TenMon", monAn.TenMonAn);
-                SqlParameter paDonGia = new SqlParameter("@DonGia", monAn.DonGia);
-                SqlParameter paTrangThai = new SqlParameter("@TrangThai", monAn.TrangThai);
-                cmd.Parameters.Add(paMaMon);
-                cmd.Parameters.Add(paTenMon);
-                cmd.Parameters.Add(paDonGia);
-                cmd.Parameters.Add(paTrangThai);
-                int row = cmd.ExecuteNonQuery();
-                return row;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally { conn.Close(); }
-            return 0;
+            SqlParameter[] sqlParameters = new SqlParameter[] {
+                new SqlParameter("@MaMon", monAn.MaMonAn),
+                new SqlParameter("@TenMon", monAn.TenMonAn),
+                new SqlParameter("@DonGia", monAn.DonGia),
+                new SqlParameter("@TrangThai", monAn.TrangThai)
+
+            };
+            return DataProvider.Instance.ExecuteNonQuery("sp_SuaMon", sqlParameters);
         }
     }
 }

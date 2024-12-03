@@ -9,3 +9,14 @@ D:\1_Lập trình ứng dụng\DoAnQLNhaHang\BUS\obj\Debug\BUS.csproj.CoreCompil
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\BUS\obj\Debug\BUS.dll
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\BUS\obj\Debug\BUS.pdb
+D:\DoAnQLNhaHang\BUS\bin\Debug\BUS.dll
+D:\DoAnQLNhaHang\BUS\bin\Debug\BUS.pdb
+D:\DoAnQLNhaHang\BUS\bin\Debug\DAL.dll
+D:\DoAnQLNhaHang\BUS\bin\Debug\ET.dll
+D:\DoAnQLNhaHang\BUS\bin\Debug\DAL.pdb
+D:\DoAnQLNhaHang\BUS\bin\Debug\ET.pdb
+D:\DoAnQLNhaHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\DoAnQLNhaHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\DoAnQLNhaHang\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\DoAnQLNhaHang\BUS\obj\Debug\BUS.dll
+D:\DoAnQLNhaHang\BUS\obj\Debug\BUS.pdb
