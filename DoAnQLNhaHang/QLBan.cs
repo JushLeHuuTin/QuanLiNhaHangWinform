@@ -33,7 +33,6 @@ namespace DoAnQLNhaHang
         private void dgvBanAn_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvBanAn.CurrentRow;
-            txtMaBan.Text = row.Cells[0].Value.ToString().Trim();
             txtTenBan.Text = row.Cells[1].Value.ToString().Trim();
             cbTrangThaiBan.Text = row.Cells[3].Value.ToString().Trim();
             cbTang.Text = row.Cells[2].Value.ToString().Trim();
@@ -42,7 +41,7 @@ namespace DoAnQLNhaHang
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            TableET tableET = new TableET(txtMaBan.Text.Trim(),txtTenBan.Text.Trim(),cbTang.Text.Trim(),cbTrangThaiBan.Text.Trim());
+            TableET tableET = new TableET( 0,txtTenBan.Text.Trim(),cbTang.Text.Trim(),cbTrangThaiBan.Text.Trim());
 
             if (banBus.ThemBan(tableET) != 0)
             {
@@ -71,7 +70,8 @@ namespace DoAnQLNhaHang
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            TableET tableET = new TableET(txtMaBan.Text.Trim(), txtTenBan.Text.Trim(), cbTang.Text.Trim(), cbTrangThaiBan.Text.Trim());
+            DataGridViewRow row = dgvBanAn.CurrentRow;
+            TableET tableET = new TableET(int.Parse(row.Cells[0].Value.ToString()), txtTenBan.Text.Trim(), cbTang.Text.Trim(), cbTrangThaiBan.Text.Trim());
 
             if (banBus.SuaBan(tableET) != 0)
             {
@@ -86,7 +86,8 @@ namespace DoAnQLNhaHang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            TableET tableET = new TableET(txtMaBan.Text.Trim(), txtTenBan.Text.Trim(), cbTang.Text.Trim(), cbTrangThaiBan.Text.Trim());
+            DataGridViewRow row = dgvBanAn.CurrentRow;
+            TableET tableET = new TableET(int.Parse(row.Cells[0].Value.ToString()), txtTenBan.Text.Trim(), cbTang.Text.Trim(), cbTrangThaiBan.Text.Trim());
             if (banBus.XoaBan(tableET) != 0)
             {
                 dgvBanAn.DataSource = banBus.DanhSachBan();

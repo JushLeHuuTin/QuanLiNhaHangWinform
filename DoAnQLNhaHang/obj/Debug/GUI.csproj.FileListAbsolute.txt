@@ -17,3 +17,22 @@ D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.CopyComplete
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.exe
 D:\1_Lập trình ứng dụng\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.pdb
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\DoAnQLNhaHang.exe.config
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\DoAnQLNhaHang.exe
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\DoAnQLNhaHang.pdb
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\BUS.dll
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\ET.dll
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\DAL.dll
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\BUS.pdb
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\ET.pdb
+D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\DAL.pdb
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.Properties.Resources.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmQLBan.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmTrangChu.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmQLThucDon.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\GUI.csproj.Up2Date
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.exe
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.pdb

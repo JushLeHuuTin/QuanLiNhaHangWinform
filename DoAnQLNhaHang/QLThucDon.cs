@@ -36,7 +36,7 @@ namespace DoAnQLNhaHang
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            MonAnET monAn = new MonAnET(txtMaMonAn.Text.Trim(),txtTenMonAn.Text.Trim(),
+            MonAnET monAn = new MonAnET(0,txtTenMonAn.Text.Trim(),
                 int.Parse(txtDonGia.Text.Trim()),txtTrangThai.Text.Trim());
             if(monAnBus.ThemMon(monAn) != 0)
             {
@@ -51,9 +51,8 @@ namespace DoAnQLNhaHang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MonAnET monAn = new MonAnET(txtMaMonAn.Text.Trim(), txtTenMonAn.Text.Trim(),
+            MonAnET monAn = new MonAnET(int.Parse(txtMaMonAn.Text.ToString()), txtTenMonAn.Text.Trim(),
                 int.Parse(txtDonGia.Text.Trim()), txtTrangThai.Text.Trim());
-            MessageBox.Show(monAn.MaMonAn);
             if (monAnBus.XoaMonAn(monAn) != 0)
             {
                 dgvThucDon.DataSource = monAnBus.DanhSachMonAn();
@@ -69,7 +68,7 @@ namespace DoAnQLNhaHang
         {
             try
             {
-                MonAnET monAn = new MonAnET(txtMaMonAn.Text.Trim(), txtTenMonAn.Text.Trim(),
+                MonAnET monAn = new MonAnET(int.Parse(txtMaMonAn.Text.Trim()), txtTenMonAn.Text.Trim(),
                    int.Parse(txtDonGia.Text.Trim()), txtTrangThai.Text.Trim());
                 if (monAnBus.SuaMonAn(monAn) != 0)
                 {
