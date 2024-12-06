@@ -22,6 +22,10 @@ namespace BUS
         {
             return MonAnDAL.DSMonAn();
         }
+        //hien thi mon an theo danh muc
+        public DataTable HienThiMonAnTuDanhMuc(int maDanhMuc){
+            return MonAnDAL.HienThiMonAnTuDanhMuc(maDanhMuc);
+        }
         //Them mon an
         public int ThemMon(MonAnET monAnET)
         {

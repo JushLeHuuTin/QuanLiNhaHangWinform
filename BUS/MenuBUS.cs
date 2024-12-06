@@ -13,9 +13,9 @@ namespace BUS
     {
         MenuDAL cTHDDAL = new MenuDAL();
         public MenuBUS() { }
-        public DataTable HienThiCTHDByIdTable(TableET tableET)
+        public List<MenuET> HienThiMenuByIdTable(TableET tableET)
         {
-           return cTHDDAL.HienThiCTHDByIdTable(tableET);
+           return cTHDDAL.HienThiMenuByIdTable(tableET);
         }
     }
 }

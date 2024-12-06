@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QLBan.resx">
       <DependentUpon>QLBan.cs</DependentUpon>
@@ -112,6 +113,15 @@
       <Project>{2609f9de-9deb-4c79-b786-721a26999d1c}</Project>
       <Name>ET</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\63866492161243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quan.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

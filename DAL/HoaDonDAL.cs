@@ -27,7 +27,29 @@ namespace DAL
             {
                 new SqlParameter ("@MaBan",idTable)
             };
-            return DataProvider.Instance.ExecuteNonQuery("ps_ThemHoaDon", sqlParameters);
+            return DataProvider.Instance.ExecuteNonQuery("sp_TaoHoaDon", sqlParameters);
+        }
+        public int KiemTraHoaDon(int idTable)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                    new SqlParameter ("@MaBan",idTable)
+            };
+            DataTable  dt = DataProvider.Instance.ExecuteQuery("sp_KiemTraHoaDon", sqlParameters);
+            if (dt.Rows.Count > 0)
+            {
+                HoaDonET hoaDonET = new HoaDonET(dt.Rows[0]);
+                return hoaDonET.IdHD;
+            }
+            return -1;
+        }
+        public int ThanhToanHoaDon(int idHD)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                    new SqlParameter ("@MaHD",idHD)
+            };
+           return DataProvider.Instance.ExecuteNonQuery("sp_ThanhToan", sqlParameters);
         }
     }
 }

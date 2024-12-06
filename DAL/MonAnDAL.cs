@@ -34,13 +34,19 @@ namespace DAL
             return DataProvider.Instance.ExecuteQuery("sp_DSMonAn");
             
         }
+        //Hien thi mon an tu ma danh muc
+        public DataTable HienThiMonAnTuDanhMuc(int maDanhMuc)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[] { new SqlParameter("@MaDanhMuc", maDanhMuc) };
+            return DataProvider.Instance.ExecuteQuery("sp_HienThiMonAnTuDanhMuc",sqlParameters);
+        }
         //Them mon an
         public int ThemMon(MonAnET monAn)
         {
             SqlParameter[] sqlParameters = new SqlParameter[] { 
                 new SqlParameter("@TenMon", monAn.TenMonAn),
                 new SqlParameter("@DonGia", monAn.DonGia),
-                new SqlParameter("@TrangThai", monAn.TrangThai)
+                new SqlParameter("@DanhMuc", monAn.MaDanhMuc)
                 
             };
             return DataProvider.Instance.ExecuteNonQuery("sp_ThemMonAn",sqlParameters);
@@ -61,7 +67,7 @@ namespace DAL
                 new SqlParameter("@MaMon", monAn.MaMonAn),
                 new SqlParameter("@TenMon", monAn.TenMonAn),
                 new SqlParameter("@DonGia", monAn.DonGia),
-                new SqlParameter("@TrangThai", monAn.TrangThai)
+                new SqlParameter("@DanhMuc", monAn.MaDanhMuc)
 
             };
             return DataProvider.Instance.ExecuteNonQuery("sp_SuaMon", sqlParameters);

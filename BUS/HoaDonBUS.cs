@@ -18,5 +18,13 @@ namespace BUS
         {
             return HoaDonDAL.ThemHoaDon(idTable);
         }
+        public int KienTraHoaDon(int idTable)
+        {
+            return HoaDonDAL.KiemTraHoaDon(idTable);
+        }
+        public int ThanhToan(int idHD)
+        {
+            return HoaDonDAL.ThanhToanHoaDon(idHD);
+        }
     }
 }

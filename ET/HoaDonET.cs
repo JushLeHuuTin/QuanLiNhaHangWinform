@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,31 +10,38 @@ namespace ET
     public class HoaDonET
     {
         private int idHD, idBan;
-        private DateTime ngayTaoHD;
-        private int tongTien;
+        private DateTime ngayTaoHD, ngayCheckout;
         private string codeVoucher;
-        private int giamGia, thanhTien;
         private string trangThai;
 
-        public HoaDonET(int idHD, int idBan, DateTime ngayTaoHD, int tongTien, string codeVoucher, int giamGia, int thanhTien, string trangThai)
+        public HoaDonET(int idHD, int idBan, DateTime ngayTaoHD, DateTime ngayCheckout, string codeVoucher, string trangThai)
         {
             this.idHD = idHD;
             this.idBan = idBan;
             this.ngayTaoHD = ngayTaoHD;
-            this.tongTien = tongTien;
+            this.ngayCheckout = ngayCheckout;
             this.codeVoucher = codeVoucher;
-            this.giamGia = giamGia;
-            this.thanhTien = thanhTien;
             this.trangThai = trangThai;
         }
 
+        public HoaDonET(DataRow item)
+        {
+            this.idHD = (int)item["ID_HoaDon"];
+            this.idBan = (int)item["ID_Ban"];
+            this.ngayTaoHD = (DateTime)item["NgayLap"];
+
+            if (item["NgayCheckout"] != "")
+            {
+                this.ngayCheckout = ngayCheckout;
+            }
+            this.codeVoucher = codeVoucher;
+            this.trangThai = trangThai;
+        }
         public int IdHD { get => idHD; set => idHD = value; }
         public int IdBan { get => idBan; set => idBan = value; }
         public DateTime NgayTaoHD { get => ngayTaoHD; set => ngayTaoHD = value; }
-        public int TongTien { get => tongTien; set => tongTien = value; }
+        public DateTime NgayCheckout { get => ngayCheckout; set => ngayCheckout = value; }
         public string CodeVoucher { get => codeVoucher; set => codeVoucher = value; }
-        public int GiamGia { get => giamGia; set => giamGia = value; }
-        public int ThanhTien { get => thanhTien; set => thanhTien = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

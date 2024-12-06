@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTHDET.cs" />
     <Compile Include="CTHoaDonET.cs" />
+    <Compile Include="DanhMucET.cs" />
     <Compile Include="MenuET.cs" />
     <Compile Include="HoaDonET.cs" />
     <Compile Include="MonAnET.cs" />

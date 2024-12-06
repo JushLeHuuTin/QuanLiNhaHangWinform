@@ -12,13 +12,18 @@ namespace DAL
     public class MenuDAL
     {
         public MenuDAL() { }
-        public DataTable  HienThiCTHDByIdTable(TableET ban)
+        public List<MenuET>  HienThiMenuByIdTable(TableET ban)
         {
+            List<MenuET> l = new List<MenuET>();
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                     new SqlParameter("@MaBan",ban.MaBan)
             };
-           return DataProvider.Instance.ExecuteQuery("sp_HienThiChiTietHoaDonTuIdBan",sqlParameters);
+           DataTable dt = DataProvider.Instance.ExecuteQuery("sp_HienThiChiTietHoaDonTuIdBan",sqlParameters);
+            foreach (DataRow dr in dt.Rows) {
+                l.Add(new MenuET(dr));
+            }
+            return l;
         }
     }
 }

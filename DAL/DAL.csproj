@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanDAL.cs" />
+    <Compile Include="CTHDDAL.cs" />
+    <Compile Include="DanhMucDAL.cs" />
     <Compile Include="MenuDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="HoaDonDAL.cs" />

@@ -36,8 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.txtMaMonAn = new System.Windows.Forms.TextBox();
@@ -50,6 +48,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.imgListMonAn = new System.Windows.Forms.ImageList(this.components);
+            this.cbDanhMuc = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).BeginInit();
             this.panel2.SuspendLayout();
@@ -117,8 +117,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txtTrangThai);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.cbDanhMuc);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtDonGia);
             this.panel2.Controls.Add(this.txtTenMonAn);
             this.panel2.Controls.Add(this.txtMaMonAn);
@@ -132,29 +132,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 384);
             this.panel2.TabIndex = 1;
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTrangThai.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTrangThai.Location = new System.Drawing.Point(146, 228);
-            this.txtTrangThai.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTrangThai.Size = new System.Drawing.Size(198, 23);
-            this.txtTrangThai.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(59, 228);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 16);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Trạng Thái";
             // 
             // txtDonGia
             // 
@@ -207,7 +184,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(59, 107);
+            this.label5.Location = new System.Drawing.Point(53, 107);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 16);
@@ -291,6 +268,27 @@
             this.imgListMonAn.Images.SetKeyName(1, "z5842192015857_ea3a5f313811f23411047f66b6cf2156.jpg");
             this.imgListMonAn.Images.SetKeyName(2, "pexels-photo-592077.jpeg");
             // 
+            // cbDanhMuc
+            // 
+            this.cbDanhMuc.FormattingEnabled = true;
+            this.cbDanhMuc.Location = new System.Drawing.Point(146, 212);
+            this.cbDanhMuc.Name = "cbDanhMuc";
+            this.cbDanhMuc.Size = new System.Drawing.Size(121, 21);
+            this.cbDanhMuc.TabIndex = 12;
+            this.cbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbDanhMuc_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(59, 217);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Danh mục";
+            // 
             // frmQLThucDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,7 +334,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ImageList imgListMonAn;
-        private System.Windows.Forms.TextBox txtTrangThai;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbDanhMuc;
+        private System.Windows.Forms.Label label4;
     }
 }
