@@ -6,23 +6,30 @@ using System.Threading.Tasks;
 
 namespace ET
 {
-    public class TaiKhoanET
+    public  class TaiKhoanET
     {
-        private static TaiKhoanET instance;
+        public string sID_NguoiDung { get; set; }
+        public string sTenNguoiDung { get; set; }
+        public string sEmail { get; set; }
+        public string sMatKhau { get; set; }  
+        public string sLoaiTaiKhoan { get; set; }
 
-        private string maTaiKhoan, tenTaiKhoan, email, matKhau, loaiTaiKhoan;
+        public TaiKhoanET() { }
 
-        public static TaiKhoanET Instance { 
-            get {    
-                if(instance == null) instance = new TaiKhoanET();
-                         return instance;
-            }
-            set => instance = value; }
-
-        public string MaTaiKhoan { get => maTaiKhoan; set => maTaiKhoan = value; }
-        public string TenTaiKhoan { get => tenTaiKhoan; set => tenTaiKhoan = value; }
-        public string Email { get => email; set => email = value; }
-        public string MatKhau { get => matKhau; set => matKhau = value; }
-        public string LoaiTaiKhoan { get => loaiTaiKhoan; set => loaiTaiKhoan = value; }
+        public TaiKhoanET(string sID_NguoiDung, string sTenNguoiDung, string sEmail, string sLoaiTaiKhoan)
+        {
+            this.sID_NguoiDung = sID_NguoiDung;
+            this.sTenNguoiDung = sTenNguoiDung;
+            this.sEmail = sEmail;
+            this.sLoaiTaiKhoan = sLoaiTaiKhoan;
+        }
     }
+
+    // lưu thông tin đăng nhập
+    public static class Session
+    {
+        public static TaiKhoanET luuTT { get; set; }
+        
+    }
+        
 }

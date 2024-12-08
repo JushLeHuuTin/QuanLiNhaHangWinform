@@ -15,6 +15,7 @@ namespace DoAnQLNhaHang
 {
     public partial class frmTrangChu : Form
     {
+
         QLBanBUS QLBanBUS = new QLBanBUS();
         MenuBUS MenuBUS = new MenuBUS();
         QLMonAnBUS QLMonAnBUS = new QLMonAnBUS();
@@ -29,6 +30,7 @@ namespace DoAnQLNhaHang
             LoadBan();
             loadDanhMuc();
             loadBanCombo();
+            loadThongTinCaNhan();
         }
 
         //hiển thị danh sách các bàn
@@ -291,10 +293,8 @@ namespace DoAnQLNhaHang
 
         private void qLBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmQLBan frmQLBan = new frmQLBan();
-            frmQLBan.Show();
-            this.Hide();
-
+            frmQLBan frmQLban = new frmQLBan();
+            frmQLban.ShowDialog();
         }
 
         private void btnBotMon_Click(object sender, EventArgs e)
@@ -432,6 +432,48 @@ namespace DoAnQLNhaHang
         {
             Form frmThongke = new ThongKeHoaDon();
             frmThongke.ShowDialog();
+        }
+
+
+
+     
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            LblDongHo.Text = DateTime.Now.ToString("dd/MM/yyyyy HH:mm:ss");
+
+        }
+
+        private void loadThongTinCaNhan()
+        {
+            lblName.Text = Session.luuTT.sTenNguoiDung;
+        }
+
+        private void đăngXuâtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
+                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Session.luuTT = null;
+                DangNhap formDangNhap = new DangNhap();
+                formDangNhap.Show();
+                this.Close();
+            }
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frmDoiMatKhau1 = new frmDoiMatKhau();
+            frmDoiMatKhau1.Show();
+            this.Close();
+        }
+
+        private void qLTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmQLTaiKhoan = new frmQLTaiKhoan();
+            frmQLTaiKhoan.Show();
+            this.Close();
         }
     }
 }

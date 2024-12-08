@@ -94,3 +94,8 @@ D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\EntityFramework.SqlServer.dll
 D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\EntityFramework.xml
 D:\DoAnQLNhaHang\DoAnQLNhaHang\bin\Debug\EntityFramework.SqlServer.xml
 D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.ThongKeHoaDon.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.DangNhap.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.DangKy.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmDoiMatKhau.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmQLTaiKhoan.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmHome.resources

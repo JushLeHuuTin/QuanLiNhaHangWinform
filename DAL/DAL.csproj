@@ -69,6 +69,7 @@
     <Compile Include="MonAnDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TaiKhoanDAL.cs" />
     <Compile Include="VoucherDAL.cs" />
   </ItemGroup>
   <ItemGroup>
