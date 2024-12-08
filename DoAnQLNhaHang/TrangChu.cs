@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ET;
 using BUS;
 using System.Globalization;
+using System.Runtime.Remoting.Messaging;
 namespace DoAnQLNhaHang
 {
     public partial class frmTrangChu : Form
@@ -145,14 +146,17 @@ namespace DoAnQLNhaHang
         }
 
         //Tính thành tiền
-        private void thanhTien()
+        private  bool thanhTien()
         {
+            bool check = false;
             if (txtTongTien.Text != "")
             {
                 DataTable dt = voucherBus.TimkiemVoucher(txtVoucher.Text.ToString());
+                if(txtVoucher.Text == "") check = true;
                 if (dt.Rows.Count > 0)
                 {
                     txtGiamGia.Text = dt.Rows[0]["GiamGia"].ToString() + "%";
+                    check = true;
                 }
                 else
                 {
@@ -163,6 +167,8 @@ namespace DoAnQLNhaHang
                 CultureInfo culture = new CultureInfo("vi-VN");
                 txtThanhTien.Text = (Decimal.Parse(txtTongTien.Text) * (1 - Decimal.Parse(giam) / 100)).ToString("c", culture);
             }
+            else { return true; }
+             return check;
         }
 
         //Thực hiện mở bàn
@@ -235,27 +241,37 @@ namespace DoAnQLNhaHang
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             TableET tableET = lbSoBan.Tag as TableET;
-            int idHoaDon = HoaDonBUS.KienTraHoaDon(tableET.MaBan);
-            if (idHoaDon != -1)
+            if (tableET != null)
             {
-                if (MessageBox.Show("Bạn muốn thanh toán cho " + tableET.TenBan, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                int idHoaDon = HoaDonBUS.KienTraHoaDon(tableET.MaBan);
+                if (idHoaDon != -1)
                 {
-                    float thanhTien = 0;
-                    string input = txtThanhTien.Text.Replace(",00 "," ").Split(' ')[0].Replace(",", "").Replace(".","");
-                    float.TryParse(input, out thanhTien);
-                    MessageBox.Show(thanhTien.ToString());
-                    string voucher = "null";
-                    if (txtVoucher.Text != "") voucher = txtVoucher.Text;
-                    if (HoaDonBUS.ThanhToan(idHoaDon,thanhTien, voucher) != -1)
+                    if (thanhTien())
                     {
-                        tableET.TrangThai = "Trống";
-                        QLBanBUS.SuaBan(tableET);
-                        LoadBan();
-                        resetForm();
-                        MessageBox.Show("Thanh toán thành công cho " + tableET.TenBan);
+                        if (MessageBox.Show("Bạn muốn thanh toán cho " + tableET.TenBan, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                        {
+                            float thanhTien = 0;
+                            string input = txtThanhTien.Text.Replace(",00 "," ").Split(' ')[0].Replace(",", "").Replace(".","");
+                            float.TryParse(input, out thanhTien);
+                            MessageBox.Show(thanhTien.ToString());
+                            string voucher = "null";
+                            if (txtVoucher.Text != "") voucher = txtVoucher.Text;
+                            if (HoaDonBUS.ThanhToan(idHoaDon,thanhTien, voucher) != -1)
+                            {
+                                tableET.TrangThai = "Trống";
+                                QLBanBUS.SuaBan(tableET);
+                                LoadBan();
+                                resetForm();
+                                MessageBox.Show("Thanh toán thành công cho " + tableET.TenBan);
+                            }
+                            else MessageBox.Show("Thanh toan that bai");
+                            ShowBill(tableET);
+                        }
                     }
-                    else MessageBox.Show("Thanh toan that bai");
-                    ShowBill(tableET);
+                    else
+                    {
+
+                    }
                 }
             }
         }
@@ -291,7 +307,10 @@ namespace DoAnQLNhaHang
 
         private void txtVoucher_Leave(object sender, EventArgs e)
         {
-            thanhTien();
+            if (!thanhTien())
+            {
+                MessageBox.Show("Voucher không tồn tại");
+            }
         }
         //tinh thanh tien
 
@@ -316,7 +335,14 @@ namespace DoAnQLNhaHang
 
         private void txtVoucher_KeyDown(object sender, KeyEventArgs e)
         {
-            thanhTien();
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!thanhTien())
+                {
+                    MessageBox.Show("Voucher không tồn tại");
+                }
+
+            }
         }
 
         private void huỷBànToolStripMenuItem_Click(object sender, EventArgs e)
@@ -383,19 +409,29 @@ namespace DoAnQLNhaHang
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            if (HoaDonBUS.KienTraHoaDon((lbSoBan.Tag as TableET).MaBan) == -1)
+            if (lbSoBan.Tag as TableET != null)
             {
-                if (MessageBox.Show("Bạn có chắc muốn xuất hóa đơn cho " + lbSoBan.Text + " ?", "In hóa đơn", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (HoaDonBUS.KienTraHoaDon((lbSoBan.Tag as TableET).MaBan) == -1)
                 {
-                    Form frm = new frmReport((lbSoBan.Tag as TableET).MaBan);
-                    frm.ShowDialog();
+                    if (MessageBox.Show("Bạn có chắc muốn xuất hóa đơn cho " + lbSoBan.Text + " ?", "In hóa đơn", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Form frm = new frmReport((lbSoBan.Tag as TableET).MaBan);
+                        frm.ShowDialog();
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng thanh toán trước khi xuất hóa đơn !");
+                else
+                {
+                    MessageBox.Show("Vui lòng thanh toán trước khi xuất hóa đơn !");
+                }
+
             }
 
+        }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmThongke = new ThongKeHoaDon();
+            frmThongke.ShowDialog();
         }
     }
 }

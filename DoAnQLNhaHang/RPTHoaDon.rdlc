@@ -425,19 +425,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Thành tiền: </Value>
-                <Style>
-                  <Format>#,0.00;(#,0.00)</Format>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Fields!ThanhTien.Value</Value>
-                <Style>
-                  <Format>#,0.00;(#,0.00)</Format>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>VNĐ</Value>
+                <Value>Thành tiền:</Value>
                 <Style>
                   <Format>#,0.00;(#,0.00)</Format>
                 </Style>
@@ -449,10 +437,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox45</rd:DefaultName>
-        <Top>9.1376cm</Top>
-        <Left>8.34473cm</Left>
+        <Top>9.31016cm</Top>
+        <Left>10.51305cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.45792cm</Width>
+        <Width>2.38189cm</Width>
         <ZIndex>2</ZIndex>
         <ToolTip>vnd</ToolTip>
         <Style>
@@ -472,15 +460,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Phần trăm giảm:  </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Fields!GiamGia.Value</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>%</Value>
+                <Value>Phần trăm giảm: </Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -490,10 +470,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox47</rd:DefaultName>
-        <Top>8.36121cm</Top>
-        <Left>8.34473cm</Left>
+        <Top>8.39649cm</Top>
+        <Left>10.51305cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.09291cm</Width>
+        <Width>2.83168cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -736,6 +716,82 @@
         <Height>0.6cm</Height>
         <Width>6.70624cm</Width>
         <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!GiamGia.Value</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>%</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>8.36121cm</Top>
+        <Left>13.34473cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!ThanhTien.Value</Value>
+                <Style>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>VNĐ</Value>
+                <Style>
+                  <Format>#,0.00;(#,0.00)</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>9.31016cm</Top>
+        <Left>12.89494cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.94979cm</Width>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

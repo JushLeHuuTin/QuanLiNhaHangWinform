@@ -16,7 +16,7 @@ namespace DoAnQLNhaHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongKeHoaDon());
+            Application.Run(new frmTrangChu());
         }
     }
 }
