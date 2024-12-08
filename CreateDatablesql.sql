@@ -11,30 +11,10 @@ CREATE TABLE NguoiDung (
     ID_NguoiDung CHAR(8) PRIMARY KEY,
     TenNguoiDung NVARCHAR(50),
     Email NVARCHAR(100),
-    MatKhau NVARCHAR(50)
+    MatKhau NVARCHAR(50) default 'admin1',
+	LoaiTaiKhoan NVARCHAR(50)
 );
 
--- Tạo bảng NhanVien
-CREATE TABLE NhanVien (
-    ID_NhanVien CHAR(8) PRIMARY KEY,
-    TenNhanVien NVARCHAR(50),
-    NgayVaoLam DATE,
-    SoDienThoai NVARCHAR(15),
-    ChucVu NVARCHAR(30),
-    ID_NguoiDung CHAR(8),
-    QuanLyID CHAR(8) NULL,
-    TrangThai NVARCHAR(10),
-    FOREIGN KEY (ID_NguoiDung) REFERENCES NguoiDung(ID_NguoiDung)
-);
-
--- Tạo bảng KhachHang
-CREATE TABLE KhachHang (
-    ID_KhachHang CHAR(8) PRIMARY KEY,
-    TenKhachHang NVARCHAR(50),
-    DiemTichLuy INT,
-    ID_NguoiDung CHAR(8) NULL,
-    FOREIGN KEY (ID_NguoiDung) REFERENCES NguoiDung(ID_NguoiDung)
-);
 
 -- Tạo bảng Ban
 CREATE TABLE Ban (
@@ -55,7 +35,7 @@ CREATE TABLE MonAn (
     ID_MonAn INT PRIMARY KEY IDENTITY(1,1),
 	ID_DanhMuc int ,
     TenMon NVARCHAR(50),
-    DonGia DECIMAL(10,2),
+    DonGia int,
 	foreign key (ID_DanhMuc) References DanhMuc(ID_DanhMuc)
 );
 
@@ -75,8 +55,9 @@ CREATE TABLE HoaDon (
     ID_Ban INT,
     NgayLap DATE DEFAULT getdate(),
 	NgayCheckout Date DEFAULT null,
-    MaVoucher VARCHAR(10) NULL,
+    MaVoucher VARCHAR(10) Default 'default',
     TrangThai NVARCHAR(20) default 'outsd',
+	ThanhTien float default 0,
     FOREIGN KEY (ID_Ban) REFERENCES Ban(ID_Ban),
     FOREIGN KEY (MaVoucher) REFERENCES Voucher(Code_Voucher)
 );
@@ -92,5 +73,3 @@ CREATE TABLE CTHD (
 );
 GO
 
-ALTER TABLE MonAn
-ALTER COLUMN DonGia int;
