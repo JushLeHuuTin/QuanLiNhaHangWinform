@@ -43,13 +43,27 @@ namespace DAL
             }
             return -1;
         }
-        public int ThanhToanHoaDon(int idHD)
+        public int ThanhToanHoaDon(int idHD,float thanhTien,string voucher)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                    new SqlParameter ("@MaHD",idHD),
+                    new SqlParameter ("@ThanhTien",thanhTien),
+                    new SqlParameter ("@Voucher",voucher)
+            };
+           return DataProvider.Instance.ExecuteNonQuery("sp_ThanhToan", sqlParameters);
+        }
+        public int HuyHoaDon(int idHD)
         {
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                     new SqlParameter ("@MaHD",idHD)
             };
-           return DataProvider.Instance.ExecuteNonQuery("sp_ThanhToan", sqlParameters);
+            return DataProvider.Instance.ExecuteNonQuery("sp_HuyHoaDon", sqlParameters);
+        }
+       public DataTable ThongkeHoaDon(DateTime dateTime1, DateTime dateTime2)
+        {
+            return DataProvider.Instance.ExecuteQuery("sp_ThongKeHoaDon",new SqlParameter[] { new SqlParameter("@DateStart",dateTime1),new SqlParameter("@DateEnd",dateTime2)});
         }
     }
 }

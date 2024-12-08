@@ -17,5 +17,9 @@ namespace BUS
         {
            return cTHDDAL.HienThiMenuByIdTable(tableET);
         }
+        public DataTable InHoaDon(TableET tableET)
+        {
+            return cTHDDAL.InHoaDon(tableET);
+        }
     }
 }

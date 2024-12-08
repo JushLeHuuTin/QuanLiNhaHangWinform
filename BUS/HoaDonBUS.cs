@@ -1,6 +1,7 @@
 ﻿using DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,17 @@ namespace BUS
         {
             return HoaDonDAL.KiemTraHoaDon(idTable);
         }
-        public int ThanhToan(int idHD)
+        public int ThanhToan(int idHD, float thanhTien,string voucher)
         {
-            return HoaDonDAL.ThanhToanHoaDon(idHD);
+            return HoaDonDAL.ThanhToanHoaDon(idHD,thanhTien,voucher);
+        }
+        public int HuyHoaDon(int idHD)
+        {
+            return HoaDonDAL.HuyHoaDon(idHD);
+        }
+        public DataTable ThongkeHoaDon(DateTime dateTime1, DateTime dateTime2)
+        {
+            return HoaDonDAL.ThongkeHoaDon(dateTime1,dateTime2);
         }
     }
 }

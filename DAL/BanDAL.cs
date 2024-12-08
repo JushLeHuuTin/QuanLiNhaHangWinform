@@ -60,6 +60,11 @@ namespace DAL
                 new SqlParameter("@MaBan",ban.MaBan)
             };
             return DataProvider.Instance.ExecuteNonQuery("sp_XoaBan", sqlParameters);
-        }    
+        }
+        //Chuyen ban
+        public int ChuyenBan(int idTable1, int idTable2)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("sp_ChuyenBan",new SqlParameter[] {new SqlParameter("@MaBanMot",idTable1), new SqlParameter("@MaBanHai", idTable2) });
+        }
     }
 }

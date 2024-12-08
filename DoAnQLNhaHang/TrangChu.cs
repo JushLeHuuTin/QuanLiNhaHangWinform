@@ -29,7 +29,7 @@ namespace DoAnQLNhaHang
             loadDanhMuc();
             loadBanCombo();
         }
-        
+
         //hiển thị danh sách các bàn
         private void LoadBan()
         {
@@ -52,6 +52,12 @@ namespace DoAnQLNhaHang
                         button.BackColor = Color.LightYellow;
                         break;
                     default:
+                        int idHoaDon = HoaDonBUS.KienTraHoaDon(item.MaBan);
+                        if (idHoaDon != -1)
+                        {
+                            HoaDonBUS.HuyHoaDon(idHoaDon);
+
+                        }
                         button.BackColor = Color.LightGreen;
                         break;
                 }
@@ -59,12 +65,12 @@ namespace DoAnQLNhaHang
                 // Thêm sự kiện Click
                 button.Click += Button_Click;
                 button.Tag = item;
-           
+                button.ContextMenuStrip = CMSBan;
                 // Thêm nút vào FlowLayoutPanel
                 flpTable.Controls.Add(button);
             }
         }
-        
+
         //Hiển thị danh sách danh mục vào combobox
         private void loadDanhMuc()
         {
@@ -80,7 +86,7 @@ namespace DoAnQLNhaHang
             cbMonAn.DisplayMember = "name";
             cbMonAn.ValueMember = "ID_MonAn";
         }
-        
+
         //Load bàn vào combobox 
         private void loadBanCombo()
         {
@@ -98,21 +104,21 @@ namespace DoAnQLNhaHang
                 lbSoBan.Tag = item;
                 HienThiBanHienTai(item);
                 ShowBill(item);
-            } if (item.TrangThai !="Có người") resetForm();
+            } if (item.TrangThai != "Có người") resetForm();
             //txtVoucher_Leave(sender,e);
         }
-        
+
         //hiện thị bàn hiện tại
         public void HienThiBanHienTai(TableET tableET)
         {
             lbSoBan.Text = tableET.TenBan.ToString();
             lbTrangThai.Text = tableET.TrangThai.ToString();
-            lbViTri.Text = tableET.ViTri.ToString();    
+            lbViTri.Text = tableET.ViTri.ToString();
             if (tableET.TrangThai.Contains("Có người"))
                 btnMoBan.Enabled = false;
             else btnMoBan.Enabled = true;
         }
-        
+
         //show buill
         public void ShowBill(TableET tableET)
         {
@@ -128,6 +134,7 @@ namespace DoAnQLNhaHang
                 listViewItem.SubItems.Add(item.SoLuong.ToString());
                 listViewItem.SubItems.Add(item.GiaMon.ToString());
                 listViewItem.SubItems.Add(item.TongTien.ToString());
+                listViewItem.SubItems.Add(item.DanhMuc.ToString());
                 lvCTHD.Items.Add(listViewItem);
             }
             if (tableET.TrangThai == "Có người")
@@ -136,7 +143,7 @@ namespace DoAnQLNhaHang
                 thanhTien();
             }
         }
-        
+
         //Tính thành tiền
         private void thanhTien()
         {
@@ -153,28 +160,34 @@ namespace DoAnQLNhaHang
                 }
 
                 string giam = txtGiamGia.Text.Split('%')[0];
-                CultureInfo culture = new CultureInfo("vi-VN"); 
+                CultureInfo culture = new CultureInfo("vi-VN");
                 txtThanhTien.Text = (Decimal.Parse(txtTongTien.Text) * (1 - Decimal.Parse(giam) / 100)).ToString("c", culture);
             }
         }
-        
+
         //Thực hiện mở bàn
         private void button2_Click(object sender, EventArgs e)
         {
             TableET tableET = (lbSoBan.Tag as TableET);
-            if (MessageBox.Show("Bạn muốn mở " + tableET.TenBan, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                HoaDonBUS.ThemHoaDon(tableET.MaBan);
+            if(tableET != null){
 
-                tableET.TrangThai = "Có người";
-                QLBanBUS.SuaBan(tableET);
-                HienThiBanHienTai(tableET);
-                LoadBan();
+                if (MessageBox.Show("Bạn muốn mở " + tableET.TenBan, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    HoaDonBUS.ThemHoaDon(tableET.MaBan);
+
+                    tableET.TrangThai = "Có người";
+                    QLBanBUS.SuaBan(tableET);
+                    HienThiBanHienTai(tableET);
+                    LoadBan();
+                }
+
             }
-
-
+            else
+            {
+                MessageBox.Show("Vui lòng chọn bàn muốn mở !");
+            }
         }
-        
+
         //Thêm món ăn 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
@@ -217,7 +230,7 @@ namespace DoAnQLNhaHang
             }
 
         }
-        
+
         //nhấn thanh toán
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
@@ -227,7 +240,13 @@ namespace DoAnQLNhaHang
             {
                 if (MessageBox.Show("Bạn muốn thanh toán cho " + tableET.TenBan, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    if (HoaDonBUS.ThanhToan(idHoaDon) != -1)
+                    float thanhTien = 0;
+                    string input = txtThanhTien.Text.Replace(",00 "," ").Split(' ')[0].Replace(",", "").Replace(".","");
+                    float.TryParse(input, out thanhTien);
+                    MessageBox.Show(thanhTien.ToString());
+                    string voucher = "null";
+                    if (txtVoucher.Text != "") voucher = txtVoucher.Text;
+                    if (HoaDonBUS.ThanhToan(idHoaDon,thanhTien, voucher) != -1)
                     {
                         tableET.TrangThai = "Trống";
                         QLBanBUS.SuaBan(tableET);
@@ -240,7 +259,7 @@ namespace DoAnQLNhaHang
                 }
             }
         }
-       
+
         private void resetForm()
         {
             txtGiamGia.Text = "";
@@ -259,14 +278,14 @@ namespace DoAnQLNhaHang
             frmQLBan frmQLBan = new frmQLBan();
             frmQLBan.Show();
             this.Hide();
-            
+
         }
 
         private void btnBotMon_Click(object sender, EventArgs e)
-            {
-                ListViewItem i = lvCTHD.SelectedItems[0];
-           
-            }
+        {
+            ListViewItem i = lvCTHD.SelectedItems[0];
+
+        }
 
 
 
@@ -290,8 +309,8 @@ namespace DoAnQLNhaHang
 
         private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) { 
-               btnThemMon_Click(sender, e);
+            if (e.KeyCode == Keys.Enter) {
+                btnThemMon_Click(sender, e);
             }
         }
 
@@ -300,6 +319,83 @@ namespace DoAnQLNhaHang
             thanhTien();
         }
 
-   
+        private void huỷBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TableET tableET = (lbSoBan.Tag as TableET);
+            if (tableET != null)
+            {
+                int idTable = tableET.MaBan;
+                int idHD = HoaDonBUS.KienTraHoaDon(idTable);
+                if (idHD != -1)
+                {
+                    if (MessageBox.Show("Bạn có chắc hủy " + tableET.TenBan + " này ?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                       if(HoaDonBUS.HuyHoaDon(idHD) != -1)
+                        {
+                            tableET.TrangThai = "Trống";
+                            QLBanBUS.SuaBan(tableET);
+                            LoadBan();
+                            MessageBox.Show("Hủy bàn thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui long thanh toan hoa don truoc !");
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn bàn muốn huy !");
+            }
+        }
+
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+            TableET table1 = lbSoBan.Tag as TableET;
+            TableET table2 = cbBan.SelectedItem as TableET;
+            if (table2.MaBan != table1.MaBan)
+            {
+                if(MessageBox.Show("Bạn có chắc muốn chuyển " + table1.TenBan +" sang " + table2.TenBan +"?", "Chuyển Bàn",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK){
+                    QLBanBUS.ChuyenBan(table1.MaBan,table2.MaBan);
+                    LoadBan();
+                    ShowBill(lbSoBan.Tag as TableET);
+                    MessageBox.Show("thanh cong");
+                }
+
+            }
+        }
+
+        private void lvCTHD_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (lvCTHD.SelectedItems.Count > 0)
+            {
+                ListViewItem listViewItem = (ListViewItem)lvCTHD.SelectedItems[0] ;
+                cbDanhMuc.Text = listViewItem.SubItems[4].Text;
+                cbMonAn.Text =  listViewItem.Text + " - "   + listViewItem.SubItems[2].Text;
+            }
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            if (HoaDonBUS.KienTraHoaDon((lbSoBan.Tag as TableET).MaBan) == -1)
+            {
+                if (MessageBox.Show("Bạn có chắc muốn xuất hóa đơn cho " + lbSoBan.Text + " ?", "In hóa đơn", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    Form frm = new frmReport((lbSoBan.Tag as TableET).MaBan);
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng thanh toán trước khi xuất hóa đơn !");
+            }
+
+        }
     }
 }

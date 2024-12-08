@@ -52,7 +52,11 @@ namespace BUS
         {
             return BanDAL.XoaBan(tableET);
         }
-        //Tong so ban
+        //Chuyen ban
+        public int ChuyenBan(int idTable1,int idTable2)
+        {
+           return BanDAL.ChuyenBan(idTable1,idTable2);
+        }
        
     }
 }

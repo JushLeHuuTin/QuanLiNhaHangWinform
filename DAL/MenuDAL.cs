@@ -25,5 +25,15 @@ namespace DAL
             }
             return l;
         }
+        public DataTable InHoaDon(TableET ban)
+        {
+            List<MenuET> l = new List<MenuET>();
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                    new SqlParameter("@idBan",ban.MaBan)
+            };
+            return DataProvider.Instance.ExecuteQuery("sp_InHoaDon", sqlParameters);
+           
+        }
     }
 }
