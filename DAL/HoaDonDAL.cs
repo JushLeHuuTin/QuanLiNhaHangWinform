@@ -65,5 +65,9 @@ namespace DAL
         {
             return DataProvider.Instance.ExecuteQuery("sp_ThongKeHoaDon",new SqlParameter[] { new SqlParameter("@DateStart",dateTime1),new SqlParameter("@DateEnd",dateTime2)});
         }
+        public DataTable ThongkeHoaDonChoBaoCao(DateTime dateTime1, DateTime dateTime2)
+        {
+            return DataProvider.Instance.ExecuteQuery("sp_ThongKeHoaDonChoBaoCao", new SqlParameter[] { new SqlParameter("@DateStart", dateTime1), new SqlParameter("@DateEnd", dateTime2) });
+        }
     }
 }

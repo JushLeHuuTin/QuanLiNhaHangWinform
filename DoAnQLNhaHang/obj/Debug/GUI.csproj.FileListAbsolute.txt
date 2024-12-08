@@ -99,3 +99,5 @@ D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.DangKy.resources
 D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmDoiMatKhau.resources
 D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmQLTaiKhoan.resources
 D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmHome.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.Admin.resources
+D:\DoAnQLNhaHang\DoAnQLNhaHang\obj\Debug\DoAnQLNhaHang.frmAbout.resources

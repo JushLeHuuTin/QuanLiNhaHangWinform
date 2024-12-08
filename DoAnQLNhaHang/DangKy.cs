@@ -85,7 +85,7 @@ namespace DoAnQLNhaHang
         {
             DialogResult dr;
             dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông Báo!",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if(dr == DialogResult.OK)
             {
                 e.Cancel = false;
@@ -98,14 +98,9 @@ namespace DoAnQLNhaHang
 
         private void DangKy_Load(object sender, EventArgs e)
         {
-
         }
 
-        //LOAD COMBO BOX
-        private void loadLoaiTaiKhoan()
-        {
-            cb_LoaiTK.DataSource = null;
-        }
+      
 
     }
 

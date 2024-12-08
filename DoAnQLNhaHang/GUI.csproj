@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,11 @@
     </Compile>
     <Compile Include="QLBan.Designer.cs">
       <DependentUpon>QLBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLNhaHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNhaHangDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QLNhaHangDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -151,6 +168,9 @@
       <DependentUpon>QLThucDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Voucher.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -183,6 +206,7 @@
       <DependentUpon>QLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPTHoaDon.rdlc" />
+    <EmbeddedResource Include="rptMonAn.rdlc" />
     <EmbeddedResource Include="rptThongKeHoaDon.rdlc" />
     <EmbeddedResource Include="ThongKeHoaDon.resx">
       <DependentUpon>ThongKeHoaDon.cs</DependentUpon>
@@ -219,6 +243,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLNhaHangDataSet.xsc">
+      <DependentUpon>QLNhaHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNhaHangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNhaHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNhaHangDataSet.xss">
+      <DependentUpon>QLNhaHangDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QLNhaHangDataSet4.xsc">
       <DependentUpon>QLNhaHangDataSet4.xsd</DependentUpon>
     </None>

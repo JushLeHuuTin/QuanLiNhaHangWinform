@@ -82,11 +82,9 @@ namespace DoAnQLNhaHang
             if (MessageBox.Show("Bạn thật sự muốn resert mật khẩu ?","Resert mật khẩu",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 TaiKhoanET tk = new TaiKhoanET(txtTenTaiKhoan.Text.Trim(), txtTenHienThi.Text.Trim(), txtEmail.Text.Trim(), cbChucVu.Text);
-                if (dsTaiKhoanBus.SuaTaiKhoan(tk) != 0)
+                if (dsTaiKhoanBus.DatLaiMatKhau(tk) != -1)
                 {
                     dgvTaiKhoan.DataSource = dsTaiKhoanBus.LoadDSTaiKhoan();
-                    this.Hide();
-                    new DangNhap().Show();
                     MessageBox.Show("resert tài khoản thành công.");
                 }
                 else

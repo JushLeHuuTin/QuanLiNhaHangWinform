@@ -43,6 +43,7 @@ namespace DoAnQLNhaHang
 
         }
         private void ShowForm(Form from){
+            pnPrimary.Controls.Clear();
             from.TopLevel = false;
             from.FormBorderStyle = FormBorderStyle.None;
             from.Dock = DockStyle.Fill;
@@ -53,7 +54,7 @@ namespace DoAnQLNhaHang
         public void AdminAccess()
         {
             ////
-            //Mnu_Admin.Enabled = true;
+            btnAdmin.Enabled = true;
 
         }
 
@@ -63,6 +64,7 @@ namespace DoAnQLNhaHang
             //Mnu_Baocao.Visible = true;
             //Mnu_DangXuat.Visible = true;
             //Mnu_Admin.Visible = false;
+            btnAdmin.Enabled = false;
         }
 
         public void Qnguoidung()
@@ -71,6 +73,7 @@ namespace DoAnQLNhaHang
             //Mnu_Baocao.Visible = false;
             //Mnu_DangXuat.Visible = true;
             //Mnu_Admin.Visible = false;
+            btnAdmin.Enabled= false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -81,6 +84,50 @@ namespace DoAnQLNhaHang
         private void loadName()
         {
             lblName.Text = Session.luuTT.sTenNguoiDung;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            ShowForm(new Admin());
+        }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
+        {
+            ShowForm(new frmDoiMatKhau());
+
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
+                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Session.luuTT = null;
+                DangNhap formDangNhap = new DangNhap();
+                formDangNhap.Show();
+                this.FormClosing -= frmHome_FormClosing;
+
+                this.Close();
+
+                this.FormClosing += frmHome_FormClosing;
+            }
+        }
+
+        private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr;
+            dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông Báo!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

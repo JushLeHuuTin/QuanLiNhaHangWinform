@@ -51,5 +51,17 @@ namespace DoAnQLNhaHang
             LoadHoaDon(dtpCheckin.Value, tmpCheckout.Value);
 
         }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmReport("HoaDon");
+            frm.ShowDialog();
+        }
+
+        private void bếpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmReport("Menu");
+            frm.ShowDialog();
+        }
     }
 }

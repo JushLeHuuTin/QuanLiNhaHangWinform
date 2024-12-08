@@ -93,7 +93,7 @@ namespace DoAnQLNhaHang
         {
             DialogResult dr;
             dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông Báo!",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
                 e.Cancel = false;

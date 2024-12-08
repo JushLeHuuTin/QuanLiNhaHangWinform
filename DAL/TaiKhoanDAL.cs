@@ -236,6 +236,14 @@ namespace DAL
             };
             return DataProvider.Instance.ExecuteNonQuery("sp_SuaTaiKhoan", sp);
         }
+        public static int DatLaiMatKhau(TaiKhoanET tk)
+        {
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@Id_ND",tk.sID_NguoiDung)
+            };
+            return DataProvider.Instance.ExecuteNonQuery("sp_DatLaiMatKhau", sp);
+        }
         public static int XoaTaiKhoan(TaiKhoanET tk)
         {
             SqlParameter[] sp = new SqlParameter[]

@@ -34,6 +34,11 @@ namespace DAL
             return DataProvider.Instance.ExecuteQuery("sp_DSMonAn");
             
         }
+        public DataTable DSMonAnchoBaoCao()
+        {
+            return DataProvider.Instance.ExecuteQuery("sp_DSMonAnchoBaoCao");
+
+        }
         //Hien thi mon an tu ma danh muc
         public DataTable HienThiMonAnTuDanhMuc(int maDanhMuc)
         {
@@ -72,5 +77,12 @@ namespace DAL
             };
             return DataProvider.Instance.ExecuteNonQuery("sp_SuaMon", sqlParameters);
         }
+        //tim kiem mon an
+        public DataTable TimKiemMuonAn(string Key)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[] { new SqlParameter("@name",Key) };
+            return DataProvider.Instance.ExecuteQuery("sp_TimKiemMonAn", sqlParameters);
+        }
+
     }
 }

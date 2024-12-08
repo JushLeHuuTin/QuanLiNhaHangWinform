@@ -35,5 +35,9 @@ namespace BUS
         {
             return HoaDonDAL.ThongkeHoaDon(dateTime1,dateTime2);
         }
+        public DataTable ThongkeHoaDonChoBaoCao(DateTime dateTime1, DateTime dateTime2)
+        {
+            return HoaDonDAL.ThongkeHoaDonChoBaoCao(dateTime1, dateTime2);
+        }
     }
 }

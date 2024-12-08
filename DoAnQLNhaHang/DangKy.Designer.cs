@@ -44,12 +44,12 @@
             this.btn_DangNhap_DK = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pic_DangKy = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_IDnguoidung = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cb_LoaiTK = new System.Windows.Forms.ComboBox();
-            this.pic_DangKy = new System.Windows.Forms.PictureBox();
             this.pn_DangKy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_DangKy)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +57,8 @@
             // btn_dangKy
             // 
             this.btn_dangKy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_dangKy.Location = new System.Drawing.Point(456, 344);
-            this.btn_dangKy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_dangKy.Location = new System.Drawing.Point(481, 341);
+            this.btn_dangKy.Margin = new System.Windows.Forms.Padding(2);
             this.btn_dangKy.Name = "btn_dangKy";
             this.btn_dangKy.Size = new System.Drawing.Size(124, 38);
             this.btn_dangKy.TabIndex = 24;
@@ -81,10 +81,10 @@
             // txt_nhapLaiMatKhau_DK
             // 
             this.txt_nhapLaiMatKhau_DK.ForeColor = System.Drawing.Color.Black;
-            this.txt_nhapLaiMatKhau_DK.Location = new System.Drawing.Point(448, 258);
-            this.txt_nhapLaiMatKhau_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_nhapLaiMatKhau_DK.Location = new System.Drawing.Point(427, 252);
+            this.txt_nhapLaiMatKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nhapLaiMatKhau_DK.Name = "txt_nhapLaiMatKhau_DK";
-            this.txt_nhapLaiMatKhau_DK.Size = new System.Drawing.Size(139, 20);
+            this.txt_nhapLaiMatKhau_DK.Size = new System.Drawing.Size(188, 20);
             this.txt_nhapLaiMatKhau_DK.TabIndex = 22;
             // 
             // label8
@@ -92,7 +92,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(446, 242);
+            this.label8.Location = new System.Drawing.Point(425, 236);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 15);
@@ -102,10 +102,10 @@
             // txt_matKhau_DK
             // 
             this.txt_matKhau_DK.ForeColor = System.Drawing.Color.Black;
-            this.txt_matKhau_DK.Location = new System.Drawing.Point(448, 215);
-            this.txt_matKhau_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_matKhau_DK.Location = new System.Drawing.Point(427, 209);
+            this.txt_matKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txt_matKhau_DK.Name = "txt_matKhau_DK";
-            this.txt_matKhau_DK.Size = new System.Drawing.Size(139, 20);
+            this.txt_matKhau_DK.Size = new System.Drawing.Size(188, 20);
             this.txt_matKhau_DK.TabIndex = 20;
             // 
             // label7
@@ -113,7 +113,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(446, 199);
+            this.label7.Location = new System.Drawing.Point(425, 193);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 15);
@@ -123,10 +123,10 @@
             // txt_sEmail_DK
             // 
             this.txt_sEmail_DK.ForeColor = System.Drawing.Color.Black;
-            this.txt_sEmail_DK.Location = new System.Drawing.Point(448, 171);
-            this.txt_sEmail_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_sEmail_DK.Location = new System.Drawing.Point(427, 165);
+            this.txt_sEmail_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txt_sEmail_DK.Name = "txt_sEmail_DK";
-            this.txt_sEmail_DK.Size = new System.Drawing.Size(139, 20);
+            this.txt_sEmail_DK.Size = new System.Drawing.Size(188, 20);
             this.txt_sEmail_DK.TabIndex = 18;
             // 
             // label6
@@ -134,7 +134,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(446, 154);
+            this.label6.Location = new System.Drawing.Point(425, 148);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 15);
@@ -144,10 +144,10 @@
             // txt_tenNguoiDung_DK
             // 
             this.txt_tenNguoiDung_DK.ForeColor = System.Drawing.Color.Black;
-            this.txt_tenNguoiDung_DK.Location = new System.Drawing.Point(448, 124);
-            this.txt_tenNguoiDung_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_tenNguoiDung_DK.Location = new System.Drawing.Point(427, 118);
+            this.txt_tenNguoiDung_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tenNguoiDung_DK.Name = "txt_tenNguoiDung_DK";
-            this.txt_tenNguoiDung_DK.Size = new System.Drawing.Size(139, 20);
+            this.txt_tenNguoiDung_DK.Size = new System.Drawing.Size(188, 20);
             this.txt_tenNguoiDung_DK.TabIndex = 16;
             // 
             // label5
@@ -155,12 +155,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(446, 108);
+            this.label5.Location = new System.Drawing.Point(425, 102);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.Size = new System.Drawing.Size(90, 15);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Tên người dùng:";
+            this.label5.Text = "Tên đăng nhập";
             // 
             // pn_DangKy
             // 
@@ -172,7 +172,7 @@
             this.pn_DangKy.Controls.Add(this.pic_DangKy);
             this.pn_DangKy.Controls.Add(this.label1);
             this.pn_DangKy.Location = new System.Drawing.Point(0, 1);
-            this.pn_DangKy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_DangKy.Margin = new System.Windows.Forms.Padding(2);
             this.pn_DangKy.Name = "pn_DangKy";
             this.pn_DangKy.Size = new System.Drawing.Size(328, 406);
             this.pn_DangKy.TabIndex = 14;
@@ -195,7 +195,7 @@
             // 
             this.btn_DangNhap_DK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btn_DangNhap_DK.Location = new System.Drawing.Point(96, 356);
-            this.btn_DangNhap_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_DangNhap_DK.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DangNhap_DK.Name = "btn_DangNhap_DK";
             this.btn_DangNhap_DK.Size = new System.Drawing.Size(124, 38);
             this.btn_DangNhap_DK.TabIndex = 12;
@@ -229,6 +229,18 @@
             this.label2.Text = "Chào Mừng Các Bạn Đến Với Nhà Hàng";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pic_DangKy
+            // 
+            this.pic_DangKy.Image = ((System.Drawing.Image)(resources.GetObject("pic_DangKy.Image")));
+            this.pic_DangKy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pic_DangKy.Location = new System.Drawing.Point(81, 107);
+            this.pic_DangKy.Margin = new System.Windows.Forms.Padding(2);
+            this.pic_DangKy.Name = "pic_DangKy";
+            this.pic_DangKy.Size = new System.Drawing.Size(150, 150);
+            this.pic_DangKy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_DangKy.TabIndex = 1;
+            this.pic_DangKy.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -247,19 +259,19 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9F);
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(446, 68);
+            this.label10.Location = new System.Drawing.Point(425, 62);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 15);
+            this.label10.Size = new System.Drawing.Size(98, 15);
             this.label10.TabIndex = 25;
-            this.label10.Text = "ID người dùng:";
+            this.label10.Text = "Tên người dùng:";
             // 
             // txt_IDnguoidung
             // 
-            this.txt_IDnguoidung.Location = new System.Drawing.Point(448, 84);
-            this.txt_IDnguoidung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_IDnguoidung.Location = new System.Drawing.Point(427, 78);
+            this.txt_IDnguoidung.Margin = new System.Windows.Forms.Padding(2);
             this.txt_IDnguoidung.Name = "txt_IDnguoidung";
-            this.txt_IDnguoidung.Size = new System.Drawing.Size(139, 20);
+            this.txt_IDnguoidung.Size = new System.Drawing.Size(188, 20);
             this.txt_IDnguoidung.TabIndex = 26;
             // 
             // label11
@@ -267,7 +279,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(446, 284);
+            this.label11.Location = new System.Drawing.Point(425, 278);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 15);
@@ -277,23 +289,14 @@
             // cb_LoaiTK
             // 
             this.cb_LoaiTK.FormattingEnabled = true;
-            this.cb_LoaiTK.Location = new System.Drawing.Point(449, 301);
-            this.cb_LoaiTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_LoaiTK.Items.AddRange(new object[] {
+            "Khách hàng",
+            "Nhân viên"});
+            this.cb_LoaiTK.Location = new System.Drawing.Point(428, 295);
+            this.cb_LoaiTK.Margin = new System.Windows.Forms.Padding(2);
             this.cb_LoaiTK.Name = "cb_LoaiTK";
-            this.cb_LoaiTK.Size = new System.Drawing.Size(139, 21);
+            this.cb_LoaiTK.Size = new System.Drawing.Size(188, 21);
             this.cb_LoaiTK.TabIndex = 28;
-            // 
-            // pic_DangKy
-            // 
-            this.pic_DangKy.Image = ((System.Drawing.Image)(resources.GetObject("pic_DangKy.Image")));
-            this.pic_DangKy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_DangKy.Location = new System.Drawing.Point(81, 107);
-            this.pic_DangKy.Margin = new System.Windows.Forms.Padding(2);
-            this.pic_DangKy.Name = "pic_DangKy";
-            this.pic_DangKy.Size = new System.Drawing.Size(150, 150);
-            this.pic_DangKy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_DangKy.TabIndex = 1;
-            this.pic_DangKy.TabStop = false;
             // 
             // DangKy
             // 
@@ -315,7 +318,7 @@
             this.Controls.Add(this.txt_tenNguoiDung_DK);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pn_DangKy);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangKy";

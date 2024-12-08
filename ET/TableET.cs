@@ -24,10 +24,10 @@ namespace ET
         }
         public TableET(DataRow item)
         {
-            this.maBan = (int)item["ID_Ban"];
-            this.tenBan = (string)item["tenBan"];
-            this.trangThai = (string)item["trangThai"];
-            this.viTri = (string)item["ViTri"];
+            this.maBan = (int)item["Mã Bàn"];
+            this.tenBan = (string)item["Tên bàn"];
+            this.trangThai = (string)item["Trạng thái"];
+            this.viTri = (string)item["Vị trí"];
         }
         public int MaBan { get => maBan; set => maBan = value; }
         public string TenBan { get => tenBan; set => tenBan = value; }

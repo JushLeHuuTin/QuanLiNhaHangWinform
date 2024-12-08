@@ -22,6 +22,10 @@ namespace BUS
         {
             return MonAnDAL.DSMonAn();
         }
+        public DataTable DSMonAnchoBaoCao()
+        {
+            return MonAnDAL.DSMonAnchoBaoCao();
+        }
         //hien thi mon an theo danh muc
         public DataTable HienThiMonAnTuDanhMuc(int maDanhMuc){
             return MonAnDAL.HienThiMonAnTuDanhMuc(maDanhMuc);
@@ -40,6 +44,11 @@ namespace BUS
         public int SuaMonAn(MonAnET monAnET)
         {
             return MonAnDAL.SuaMon(monAnET);
+        }
+        //tim kiem mon an
+        public DataTable TimKiemMuonAn(string key)
+        {
+            return MonAnDAL.TimKiemMuonAn(key);
         }
     }
 }

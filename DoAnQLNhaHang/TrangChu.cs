@@ -30,7 +30,6 @@ namespace DoAnQLNhaHang
             LoadBan();
             loadDanhMuc();
             loadBanCombo();
-            loadThongTinCaNhan();
         }
 
         //hiển thị danh sách các bàn
@@ -255,7 +254,6 @@ namespace DoAnQLNhaHang
                             float thanhTien = 0;
                             string input = txtThanhTien.Text.Replace(",00 "," ").Split(' ')[0].Replace(",", "").Replace(".","");
                             float.TryParse(input, out thanhTien);
-                            MessageBox.Show(thanhTien.ToString());
                             string voucher = "null";
                             if (txtVoucher.Text != "") voucher = txtVoucher.Text;
                             if (HoaDonBUS.ThanhToan(idHoaDon,thanhTien, voucher) != -1)
@@ -428,26 +426,10 @@ namespace DoAnQLNhaHang
 
         }
 
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmThongke = new ThongKeHoaDon();
-            frmThongke.ShowDialog();
-        }
-
 
 
      
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            LblDongHo.Text = DateTime.Now.ToString("dd/MM/yyyyy HH:mm:ss");
-
-        }
-
-        private void loadThongTinCaNhan()
-        {
-            lblName.Text = Session.luuTT.sTenNguoiDung;
-        }
-
+   
         private void đăngXuâtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
@@ -474,6 +456,41 @@ namespace DoAnQLNhaHang
             Form frmQLTaiKhoan = new frmQLTaiKhoan();
             frmQLTaiKhoan.Show();
             this.Close();
+        }
+
+        private void hoaDonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmReport("HoaDon");
+            frm.ShowDialog();
+        }
+
+        private void monAnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmReport("Menu");
+            frm.ShowDialog();
+        }
+
+        private void đặtBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TableET tableET = (lbSoBan.Tag as TableET);
+            if (tableET != null)
+            {
+                int idTable = tableET.MaBan;
+                int idHD = HoaDonBUS.KienTraHoaDon(idTable);
+                if (idHD == -1)
+                {
+                    tableET.TrangThai = "Đặt trước";
+                    if (QLBanBUS.SuaBan(tableET)!= -1)
+                    {
+                        LoadBan();
+                        MessageBox.Show("Đặt "+ tableET.TenBan +" thành công");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(tableET.TenBan + " có người không thể đặt");
+                }
+            }
         }
     }
 }

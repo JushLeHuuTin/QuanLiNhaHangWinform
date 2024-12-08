@@ -146,5 +146,10 @@ namespace BUS
         {
             return TaiKhoanDAL.XoaTaiKhoan(tk);
         }
+        //dat lai mk
+        public int DatLaiMatKhau(TaiKhoanET tk)
+        {
+            return TaiKhoanDAL.DatLaiMatKhau(tk);
+        }
     }
 }

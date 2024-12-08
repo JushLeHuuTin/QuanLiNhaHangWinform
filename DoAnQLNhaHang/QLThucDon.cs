@@ -95,5 +95,11 @@ namespace DoAnQLNhaHang
         private void cbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        private void txtTimKiemMon_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = monAnBus.TimKiemMuonAn(txtTimKiemMon.Text);
+            dgvThucDon.DataSource=dt;
+        }
     }
 }
